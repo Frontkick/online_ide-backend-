@@ -9,9 +9,8 @@ app.use(cors());
 
 app.use(express.urlencoded({ extended: true}));
 
-app.get("/", (req,res) => {
-    return res.json({hello: "world"});
-});
+app.get("/", (req,res) => res.send("Express on Vercel"));
+
 
 app.post("/run", async (req, res) => {
     const { language = "cpp", code} = req.body;
